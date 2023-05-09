@@ -18,9 +18,31 @@ require_once('vendor/autoload.php');
 $f3 = Base::instance();
 
 // Define a default route
-$f3->route('GET /', function() {
+$f3->route('GET /', function($f3) {
 
-    //echo '<h1>Welcome to Week 6!</h1>';
+    // Add data to F3 "hive"
+    $f3->set('title', 'Welcome to Week 6: Templating');
+    $f3->set('color', 'green');
+    $f3->set('food', 'pho');
+    $f3->set('temp', 67);
+
+    // Add a radius variable to your controller
+    $f3->set('radius', 10);
+
+    // Add an array of fruits to the controller
+    $fruits = array('banana', 'apple', 'kiwi');
+    $f3->set('fruits', $fruits);
+
+    // Add an array of vegetables to the controller
+    // Display them as a numbered list in the view page
+    $veggies = array('kale', 'zucchini', 'eggplant');
+    $f3->set('veggies', $veggies);
+
+    // Define an associative array of cupcake flavors
+    $cupcakes = array('choc-mocha'=>'Chocolate Mocha',
+                      'straw-cheese'=>'Strawberry Cheesecake',
+                      'blue-lemon'=>'Blueberry Lemon');
+    $f3->set('cupcakes', $cupcakes);
 
     // Display a view page
     $view = new Template();
@@ -29,7 +51,7 @@ $f3->route('GET /', function() {
 
 //Add an .htaccess file to enable routing
 $f3->route('GET /page2', function() {
-    echo "Page 2";
+    echo "Page 2 ";
 });
 
 // Run Fat-Free
