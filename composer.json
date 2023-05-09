@@ -1,0 +1,16 @@
+{
+  "name": "tostrander/328/week6",
+  "authors": [
+    {
+      "name": "Tina Ostrander",
+      "email": "tostrander@greenriver.edu"
+    },
+    {
+      "name": "Dee Brecke",
+      "email": "dee.brecke@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
